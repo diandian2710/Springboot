@@ -1,0 +1,51 @@
+server:
+  port: 8080
+  server-header:
+  compression:
+    enabled: true
+    mime-types:
+    excluded-user-agents:
+  address:
+
+#注入到我们的配置类中
+
+# 对象
+student:
+  name: xihengwang
+  age: 3
+
+#student: {name: xihengwang,age: 3}
+# 数组
+pet:
+  - cat
+  - dog
+  - pig
+#pet: [cat,dog,pig]
+
+person:
+  name: xihengwang${random.uuid}
+  age: ${random.int}
+  happy: true
+  birth: 2020/10/11
+  maps: {k1: v1, k2: v2}
+  list:
+    - code
+    - music
+    - girl
+  hello: http
+  dog:
+    name: ${person.hello:hello}_旺财
+    age: 3
+debug: true
+spring:
+  activemq:
+    non-blocking-redelivery:
+  batch:
+    table-prefix:
+  task:
+    scheduling:
+      pool:
+        size:
+
+
+
